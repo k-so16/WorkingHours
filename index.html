@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Working Hours</title>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="calc.js"></script>
+  </head>
+
+  <body>
+    <h1>Working Hours</h1>
+
+    <form>
+      <p id='started'>
+        started working at:
+        <input type="number" max="23" value="10">
+        :
+        <input type="number" max="59" value="00">
+      </p>
+      <p id='ended'>
+        ended working at: 
+        <input type="number" max="23" value="15">
+        :
+        <input type="number" max="59" value="00">
+      </p>
+      <p id='break'>
+        Break Time: 
+        <input type="number" value="0">
+        :
+        <input type="number" max="59" value="00">
+      </p>
+      <button type="button">Calculate</button>
+    </form>
+    <p id='result'></p>
+  </body>
+</html>
