@@ -11,3 +11,15 @@
 #break input[type="number"] {
   width: 3em;
 }
+
+footer {
+  text-align: right;
+  margin-right: 35px;
+}
+
+footer #copy {
+  color:     #0000ff;
+  font-size: 10pt;
+  font-weight: bold;
+  font-family: "Courier New", "Ricty Diminished Discord", monospace;
+}
