@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Working Hours</title>
+    <link rel="stylesheet" href="style.css">
     <script src="jquery-3.2.1.js"></script>
     <script src="calc.js"></script>
   </head>
@@ -10,27 +11,37 @@
   <body>
     <h1>Working Hours</h1>
 
-    <form>
-      <p id='started'>
-        started working at:
-        <input type="number" max="23" value="10">
-        :
-        <input type="number" max="59" value="00">
-      </p>
-      <p id='ended'>
-        ended working at: 
-        <input type="number" max="23" value="15">
-        :
-        <input type="number" max="59" value="00">
-      </p>
-      <p id='break'>
-        Break Time: 
-        <input type="number" value="0">
-        :
-        <input type="number" max="59" value="00">
-      </p>
-      <button type="button">Calculate</button>
-    </form>
+    <table>
+      <form>
+        <tr id='started'>
+          <td>started working at:</td>
+          <td>
+            <input type="number" max="23" value="10">
+            :
+            <input type="number" max="59" value="00">
+          </td>
+        </tr>
+        <tr id='ended'>
+          <td>ended working at: </td>
+          <td>
+            <input type="number" max="23" value="15">
+            :
+            <input type="number" max="59" value="00">
+          </td>
+        </tr>
+        <tr id='break'>
+          <td>Break Time:</td>
+          <td>
+            <input type="number" value="0">
+            :
+            <input type="number" max="59" value="00">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><button type="button">Calculate</button></td>
+        </tr>
+      </form>
+    </table>
     <p id='result'></p>
   </body>
 </html>

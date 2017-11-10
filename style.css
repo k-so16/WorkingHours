@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+#started input[type="number"] {
+  width: 3em;
+}
+
+#ended input[type="number"] {
+  width: 3em;
+}
+
+#break input[type="number"] {
+  width: 3em;
+}
