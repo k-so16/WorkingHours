@@ -2,14 +2,21 @@
 
 #started input[type="number"] {
   width: 3em;
+  font-size: 18pt;
 }
 
 #ended input[type="number"] {
   width: 3em;
+  font-size: 18pt;
 }
 
 #break input[type="number"] {
   width: 3em;
+  font-size: 18pt;
+}
+
+#result {
+  font-size: 18pt;
 }
 
 footer {
