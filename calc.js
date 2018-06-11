@@ -44,7 +44,7 @@ $(function() {
   $(document).on('click', '.del_working_hours_row', function() {
     $(this).parents('tr').remove();
 
-    if ($('button.del_working_hours_row') == 1) {
+    if ($('button.del_working_hours_row').length == 1) {
       $('button.del_working_hours_row').prop('disabled', true);
     }
   });
