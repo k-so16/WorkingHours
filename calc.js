@@ -1,5 +1,5 @@
 $(() => {
-  $('button').on('click', calc);
+  $('button#calc').on('click', calc);
   $('input[type="number"]').on('change blur', format);
 });
 
@@ -36,10 +36,6 @@ function calc()
 
 function format(form)
 {
-  if($(this).is($('#break').find('input[type="number"]').eq(0))) {
-    return;
-  }
-
   var val = parseInt($(this).val());
   if(!Number.isInteger(val)) {
     $(this).val('00');
@@ -49,8 +45,7 @@ function format(form)
     $(this).val('00');
   }
 
-  if($(this).is($('#started').find('input[type="number"]').eq(0))
-      || $(this).is($('#ended').find('input[type="number"]').eq(0))) {
+  if($(this).attr('class') === 'hour') {
     if(val > 23) {
       $(this).val('23');
     }
