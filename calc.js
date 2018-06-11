@@ -1,4 +1,4 @@
-$(() => {
+$(function() {
   $('button#calc').on('click', calc);
   $('input[type="number"]').on('change blur', format);
 });
@@ -11,7 +11,7 @@ function calc()
 
   /* calclate total time of worked time */
   $('#working_hours_list tr').each(function() {
-    if($(this).find('th').length) {
+    if ($(this).find('th').length) {
       return;
     }
 
@@ -28,14 +28,14 @@ function calc()
     var diff =
       parseInt((ended.getTime() - started.getTime()) / (60 * 1000));
 
-    if(diff < 0) {
+    if (diff < 0) {
       worked_time = -1;
-    } else if(worked_time >= 0) {
+    } else if (worked_time >= 0) {
       worked_time += diff
     }
   });
 
-  if(worked_time < 0) {
+  if (worked_time < 0) {
     var e_msg = 'The Ended time is earlier than started time!!';
     // alert(e_msg);
     $('#result').text('Error: ' + e_msg);
@@ -47,7 +47,7 @@ function calc()
     + parseInt($('#break_time input.min').val());
 
   total_time = worked_time - break_time;
-  if(total_time < 0) {
+  if (total_time < 0) {
     var e_msg = 'Your break time is longer than working time!!';
     // alert(e_msg);
     $('#result').text('Error: ' + e_msg);
@@ -62,7 +62,7 @@ function calc()
 function format(form)
 {
   var val = parseInt($(this).val());
-  if(!Number.isInteger(val) || val < 0) {
+  if (!Number.isInteger(val) || val < 0) {
     switch ($(this).attr('class')) {
       case 'hour':
         $(this).val('0');
@@ -71,7 +71,7 @@ function format(form)
         $(this).val('00');
         break;
     }
-  } else if(val < 10) {
+  } else if (val < 10) {
     switch ($(this).attr('class')) {
       case 'hour':
         $(this).val(val);
@@ -82,11 +82,11 @@ function format(form)
     }
   }
 
-  if($(this).attr('class') === 'hour') {
-    if(val > 23) {
+  if ($(this).attr('class') === 'hour') {
+    if (val > 23) {
       $(this).val('23');
     }
-  } else if(val >= 60) {
+  } else if (val >= 60) {
     $(this).val('59');
   }
 }
