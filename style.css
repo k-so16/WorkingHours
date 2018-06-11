@@ -1,18 +1,42 @@
 @charset "UTF-8";
 
-#started input[type="number"] {
+table {
+  margin: 15px auto;
+}
+
+table caption {
+  margin:  0px;
+  padding: 5px;
+
+  background:  #e8e8ff;
+  font-size:   16pt;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+
+table#working_hours_list,
+table#working_hours_list th,
+table#working_hours_list td {
+  border: solid 1px;
+  border-collapse: collapse;
+}
+
+
+table#working_hours_list td {
+  margin:  0px;
+  padding: 3px;
+}
+
+
+input.hour, input.min {
   width: 3em;
   font-size: 18pt;
 }
 
-#ended input[type="number"] {
-  width: 3em;
-  font-size: 18pt;
-}
-
-#break input[type="number"] {
-  width: 3em;
-  font-size: 18pt;
+table#working_hours_list td button {
+  border-radius: 6px;
+  font-size: 14pt;
 }
 
 #result {
