@@ -1,6 +1,53 @@
 $(function() {
   $('button#calc').on('click', calc);
   $('input[type="number"]').on('change blur', format);
+
+  $(document).on('click', '.add_working_hours_row', function() {
+    var table      = $(this).parents('table');
+    var tr         = $('<tr>');
+    var addButton  = $('<button>');
+    var delButton  = $('<button>');
+    var sHourInput = $('<input>');
+    var sMinInput  = $('<input>');
+    var eHourInput = $('<input>');
+    var eMinInput  = $('<input>');
+
+    addButton.attr({'type' : 'button', 'class' : 'add_working_hours_row'});
+    addButton.text('+');
+    delButton.attr({'type' : 'button', 'class' : 'del_working_hours_row'});
+    delButton.text('-');
+
+    sHourInput.attr({'type' : 'number', 'class': 'hour', 'max' : '23'});
+    sHourInput.val('10');
+    sMinInput.attr({'type' : 'number', 'class' : 'min', 'max' : '59'});
+    sMinInput.val('00');
+    eHourInput.attr({'type' : 'number', 'class' : 'hour', 'max' : '23'});
+    eHourInput.val('10');
+    eMinInput.attr({'type' : 'number', 'class' : 'min', 'max' : '59'});
+    eMinInput.val('00');
+
+    tr.append([
+      $('<td>').append(addButton),
+      $('<td>').append(delButton),
+      $('<td>').append(sHourInput)
+               .append(document.createTextNode(" : "))
+               .append(sMinInput),
+      $('<td>').append(eHourInput)
+               .append(document.createTextNode(" : "))
+               .append(eMinInput)
+    ]);
+    table.append(tr);
+
+    $('button.del_working_hours_row').prop('disabled', false);
+  });
+
+  $(document).on('click', '.del_working_hours_row', function() {
+    $(this).parents('tr').remove();
+
+    if ($('button.del_working_hours_row') == 1) {
+      $('button.del_working_hours_row').prop('disabled', true);
+    }
+  });
 });
 
 function calc()
