@@ -12,44 +12,82 @@
   <body>
     <h1>Working Hours</h1>
 
-    <table>
+    <table id="working_hours_list">
+      <caption>Working Hours List</caption>
       <form>
-        <tr id='started'>
-          <td>started working at:</td>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>started at</th>
+          <th>ended at</th>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" class="add_working_hours_row">
+              +
+            </button>
+          </td>
+          <td>
+            <button type="button" class="del_working_hours_row" disabled>
+              -
+            </button>
+          </td>
+          <td>
+            <input type="number" max="23" value="10">
+            :
+            <input type="number" max="59" value="00">
+          </td>
           <td>
             <input type="number" max="23" value="10">
             :
             <input type="number" max="59" value="00">
           </td>
         </tr>
-        <tr id='ended'>
-          <td>ended working at: </td>
-          <td>
-            <input type="number" max="23" value="15">
-            :
-            <input type="number" max="59" value="00">
-          </td>
-        </tr>
-        <tr id='break'>
-          <td>Break Time:</td>
-          <td>
-            <input type="number" value="0">
-            :
-            <input type="number" max="59" value="00">
-          </td>
+      </form>
+    </table>
+
+    <table id="breaktime_hours_list">
+      <caption>Breaktime Hours List</caption>
+      <form>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>started at</th>
+          <th>ended at</th>
         </tr>
         <tr>
-          <td colspan="2"><button type="button">Calculate</button></td>
+          <td>
+            <button type="button" class="add_breaktime_hours_row">
+              +
+            </button>
+          </td>
+          <td>
+            <button type="button" class="del_breaktime_hours_row" disabled>
+              -
+            </button>
+          </td>
+          <td>
+            <input type="number" max="23" value="10">
+            :
+            <input type="number" max="59" value="00">
+          </td>
+          <td>
+            <input type="number" max="23" value="10">
+            :
+            <input type="number" max="59" value="00">
+          </td>
         </tr>
       </form>
     </table>
+    <button type="button" id="calc">Calculate</button>
+
     <p id='result'></p>
 
     <hr>
 
     <footer>
       <div id="copy">
-        Copyright &copy; 2017 Soichiro Kato All Rights Reserved.
+        Copyright &copy; 2017-2018 Soichiro Kato All Rights Reserved.
       </div>
     </footer>
   </body>
