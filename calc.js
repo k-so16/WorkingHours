@@ -22,7 +22,7 @@ $(function() {
     sMinInput.attr({'type' : 'number', 'class' : 'min', 'max' : '59'});
     sMinInput.val('00');
     eHourInput.attr({'type' : 'number', 'class' : 'hour', 'max' : '23'});
-    eHourInput.val('10');
+    eHourInput.val('15');
     eMinInput.attr({'type' : 'number', 'class' : 'min', 'max' : '59'});
     eMinInput.val('00');
 
