@@ -30,11 +30,13 @@ $(function() {
       $('<td>').append(addButton),
       $('<td>').append(delButton),
       $('<td>').append(sHourInput)
-               .append(document.createTextNode(" : "))
-               .append(sMinInput),
+               .append(document.createTextNode(" 時 "))
+               .append(sMinInput)
+               .append(document.createTextNode(" 分 ")),
       $('<td>').append(eHourInput)
-               .append(document.createTextNode(" : "))
+               .append(document.createTextNode(" 時 "))
                .append(eMinInput)
+               .append(document.createTextNode(" 分 "))
     ]);
     table.append(tr);
 
@@ -83,7 +85,7 @@ function calc()
   });
 
   if (worked_time < 0) {
-    var e_msg = 'The Ended time is earlier than started time!!';
+    var e_msg = '終了時刻が開始時刻より早いです';
     // alert(e_msg);
     $('#result').text('Error: ' + e_msg);
     return;
@@ -95,14 +97,14 @@ function calc()
 
   total_time = worked_time - break_time;
   if (total_time < 0) {
-    var e_msg = 'Your break time is longer than working time!!';
+    var e_msg = '休憩時間が勤務時間より長いです';
     // alert(e_msg);
     $('#result').text('Error: ' + e_msg);
     return;
   }
 
-  var result_text = 'You worked '
-    + parseInt(total_time / 60) + 'H ' + total_time % 60 + 'min long'
+  var result_text = '勤務時間: '
+    + parseInt(total_time / 60) + '時間' + total_time % 60 + '分'
   $('#result').text(result_text);
 }
 

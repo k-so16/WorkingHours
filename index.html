@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Working Hours</title>
+    <title>勤務時間計算機</title>
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.2.1.js"></script>
     <script src="calc.js"></script>
   </head>
 
   <body>
-    <h1>Working Hours</h1>
+    <h1>勤務時間計算機</h1>
 
     <table id="working_hours_list">
-      <caption>Working Hours List</caption>
+      <caption>勤務時間リスト</caption>
       <form>
         <tr>
           <th></th>
           <th></th>
-          <th>started at</th>
-          <th>ended at</th>
+          <th>勤務開始時刻</th>
+          <th>勤務終了時刻</th>
         </tr>
         <tr>
           <td>
@@ -34,31 +34,34 @@
           </td>
           <td>
             <input type="number" class='hour' max="23" value="10">
-            :
+            時
             <input type="number" class='min'  max="59" value="00">
+            分
           </td>
           <td>
             <input type="number" class='hour' max="23" value="15">
-            :
+            時
             <input type="number" class='min'  max="59" value="00">
+            分
           </td>
         </tr>
       </form>
     </table>
 
     <table id="break_time">
-      <caption>Break Time</caption>
+      <caption>休憩時間</caption>
       <form>
         <tr>
           <td>
             <input type="number" class='hour' value="0">
-            :
+            時間
             <input type="number" class='min'  value="00">
+            分
           </td>
         </tr>
       </form>
     </table>
-    <button type="button" id="calc">Calculate</button>
+    <button type="button" id="calc">計算</button>
 
     <p id='result'></p>
 
