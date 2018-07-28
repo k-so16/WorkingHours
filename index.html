@@ -5,65 +5,60 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>勤務時間計算機</title>
     <link rel="stylesheet" href="style.css">
-    <script src="jquery-3.2.1.js"></script>
-    <script src="calc.js"></script>
   </head>
 
   <body>
     <h1>勤務時間計算機</h1>
 
-    <table id="working_hours_list">
-      <caption>勤務時間リスト</caption>
-      <form>
-        <tr>
-          <th></th>
-          <th></th>
-          <th>勤務開始時刻</th>
-          <th>勤務終了時刻</th>
-        </tr>
-        <tr>
-          <td>
-            <button type="button" class="add_working_hours_row">
-              +
-            </button>
-          </td>
-          <td>
-            <button type="button" class="del_working_hours_row" disabled>
-              -
-            </button>
-          </td>
-          <td>
-            <input type="number" class='hour' max="23" value="10">
-            時
-            <input type="number" class='min'  max="59" value="00">
-            分
-          </td>
-          <td>
-            <input type="number" class='hour' max="23" value="15">
-            時
-            <input type="number" class='min'  max="59" value="00">
-            分
-          </td>
-        </tr>
-      </form>
-    </table>
+    <div id="app">
+      <p>{{ workedTime }}</p>
 
-    <table id="break_time">
-      <caption>休憩時間</caption>
-      <form>
-        <tr>
-          <td>
-            <input type="number" class='hour' value="0">
-            時間
-            <input type="number" class='min'  value="00">
-            分
-          </td>
-        </tr>
-      </form>
-    </table>
-    <button type="button" id="calc">計算</button>
+      <table>
+        <caption>勤務時間リスト</caption>
+        <form>
+          <tr>
+            <th></th>
+            <th></th>
+            <th>勤務開始時刻</th>
+            <th>勤務終了時刻</th>
+          </tr>
+          <tr v-for="(row, index) in workedList">
+            <td>
+              <button v-on:click="addRow">+</button>
+            </td>
+            <td>
+              <button v-on:click="delRow(index)"
+                      v-bind:disabled="workedList.length <= 1">-</button>
+            </td>
+            <td>
+              <input type="number" v-model.number="row.started.hour">
+               時
+               <input type="number" v-model.number="row.started.min">
+               分
+            </td>
+            <td>
+              <input type="number" v-model.number="row.ended.hour">
+              時
+              <input type="number" v-model.number="row.ended.min">
+            </td>
+          </tr>
+        </form>
+      </table>
 
-    <p id='result'></p>
+      <table>
+        <caption>休憩時間</caption>
+        <form>
+          <tr>
+            <td>
+              <input type="number" v-model.number="breakTime.hour">
+              時間
+              <input type="number" v-model.number="breakTime.min">
+              分
+            </td>
+          </tr>
+        </form>
+      </table>
+    </div>
 
     <hr>
 
@@ -72,5 +67,8 @@
         Copyright &copy; 2017-2018 Soichiro Kato All Rights Reserved.
       </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="calc.js"></script>
   </body>
 </html>
