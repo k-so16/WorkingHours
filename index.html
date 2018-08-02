@@ -11,9 +11,9 @@
     <h1>勤務時間計算機</h1>
 
     <div id="app">
-      <p>{{ workedTime }}</p>
+      <p id="result">{{ workedTime }}</p>
 
-      <table>
+      <table id="working_hours_list">
         <caption>勤務時間リスト</caption>
         <form>
           <tr>
@@ -31,15 +31,19 @@
                       v-bind:disabled="workedList.length <= 1">-</button>
             </td>
             <td>
-              <input type="number" v-model.number="row.started.hour">
+              <input type="number" min="0" max="23"
+                     v-model.number="row.started.hour">
                時
-               <input type="number" v-model.number="row.started.min">
+               <input type="number" min="0" max="59"
+                      v-model.number="row.started.min">
                分
             </td>
             <td>
-              <input type="number" v-model.number="row.ended.hour">
+              <input type="number" min="0" max="23"
+                     v-model.number="row.ended.hour">
               時
-              <input type="number" v-model.number="row.ended.min">
+              <input type="number" min="0" max="59"
+                     v-model.number="row.ended.min">
             </td>
           </tr>
         </form>
@@ -50,9 +54,10 @@
         <form>
           <tr>
             <td>
-              <input type="number" v-model.number="breakTime.hour">
+              <input type="number" min="0" v-model.number="breakTime.hour">
               時間
-              <input type="number" v-model.number="breakTime.min">
+              <input type="number" min="0" max="59"
+                     v-model.number="breakTime.min">
               分
             </td>
           </tr>

@@ -29,7 +29,7 @@ table#working_hours_list td {
 }
 
 
-input.hour, input.min {
+input {
   width: 3em;
   font-size: 18pt;
 }
