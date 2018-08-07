@@ -14,18 +14,15 @@ table caption {
   font-family: sans-serif;
 }
 
-
-table#working_hours_list,
-table#working_hours_list th,
-table#working_hours_list td {
-  border: solid 1px;
-  border-collapse: collapse;
+table th {
+  background: #f8f8f8;
 }
 
-
-table#working_hours_list td {
+table td {
   margin:  0px;
   padding: 3px;
+
+  background: #e8e8e8;
 }
 
 
@@ -34,7 +31,7 @@ input {
   font-size: 18pt;
 }
 
-table#working_hours_list td button {
+table td button {
   border-radius: 6px;
   font-size: 14pt;
 }

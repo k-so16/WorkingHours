@@ -13,7 +13,7 @@
     <div id="app">
       <p id="result">{{ workedTime }}</p>
 
-      <table id="working_hours_list">
+      <table>
         <caption>勤務時間リスト</caption>
         <form>
           <tr>
@@ -44,6 +44,7 @@
               時
               <input type="number" min="0" max="59"
                      v-model.number="row.ended.min">
+              分
             </td>
           </tr>
         </form>
